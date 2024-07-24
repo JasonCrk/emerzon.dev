@@ -1,0 +1,55 @@
+.hero-section {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.hero-section__author {
+    div:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+    }
+
+    h1 {
+        margin-bottom: 5px;
+        font-size: 3.5rem;
+
+        span {
+            display: block;
+
+            &:nth-child(1) {
+                font-size: 2rem;
+                margin-left: 1.5px;
+            }
+
+            &:nth-child(3) {
+                margin-left: 80px;
+            }
+        }
+    }
+}
+
+.hero-section__author__presentation {
+    font-size: 1.2rem;
+    text-wrap: stable;
+    width: 500px;
+
+    & span:nth-child(1) {
+        color: var(--col-primary-main);
+    }
+
+    & span:nth-last-child(1) {
+        color: var(--col-green-main);
+    }
+}
+
+.hero-section__links {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 6px;
+    align-self: self-start;
+}

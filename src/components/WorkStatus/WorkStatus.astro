@@ -1,0 +1,56 @@
+---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+import './styles.css'
+
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+    isWorking: boolean
+}
+
+const { isWorking } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<a
+    href="https://www.linkedin.com/in/emerzonkolkimartinez/"
+    target="_blank"
+    class:list={[
+        isWorking ? 'work-status--working' : 'work-status--job-search',
+    ]}
+>
+    <span
+        class:list={[
+            isWorking
+                ? 'work-status__border--working'
+                : 'work-status__border--job-search',
+        ]}></span>
+
+    <span
+        class:list={[
+            'badge',
+            isWorking
+                ? 'work-status__content--working'
+                : 'work-status__content--job-search',
+        ]}
+    >
+        {
+            isWorking ? (
+                <Icon class="icon" name="hugeicons:new-job" />
+            ) : (
+                <Icon class="icon" name="hugeicons:job-search" />
+            )
+        }
+
+        <span
+            >{
+                isWorking
+                    ? t('work-status.working')
+                    : t('work-status.job-search')
+            }</span
+        >
+    </span>
+</a>

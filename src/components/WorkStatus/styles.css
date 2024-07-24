@@ -1,0 +1,86 @@
+.work-status--working,
+.work-status--job-search {
+    position: relative;
+    display: inline-flex;
+    overflow: hidden;
+    border-radius: 100px;
+    padding: 1.1px;
+}
+
+.work-status__border--working,
+.work-status__border--job-search {
+    position: absolute;
+    inset: -1000%;
+    animation: spin 2s linear infinite;
+}
+
+.work-status__content--working,
+.work-status__content--job-search {
+    border: none;
+    text-wrap: nowrap;
+    z-index: 10;
+}
+
+:is(html.light) {
+    .work-status__border--working {
+        background: conic-gradient(from 90deg at 50% 50%,
+                var(--col-gray-100) 0%,
+                var(--col-primary-main) 50%,
+                var(--col-gray-100) 100%);
+    }
+
+    .work-status__border--job-search {
+        background: conic-gradient(from 90deg at 50% 50%,
+                var(--col-gray-100) 0%,
+                var(--col-green-main) 50%,
+                var(--col-gray-100) 100%);
+    }
+
+    .work-status__content--working {
+        background-color: var(--col-primary-100);
+        color: var(--col-primary-main);
+        z-index: 10;
+    }
+
+    .work-status__content--job-search {
+        background-color: var(--col-green-100);
+        color: var(--col-green-main);
+        z-index: 10;
+    }
+}
+
+:is(html.dark) {
+    .work-status__border--job-search {
+        background: conic-gradient(from 90deg at 50% 50%,
+                var(--col-dark-850) 0%,
+                var(--col-green-main) 50%,
+                var(--col-dark-850) 100%);
+    }
+
+    .work-status__border--working {
+        background: conic-gradient(from 90deg at 50% 50%,
+                var(--col-dark-850) 0%,
+                var(--col-primary-main) 50%,
+                var(--col-dark-850) 100%);
+    }
+
+    .work-status__content--working {
+        background-color: var(--col-dark-850);
+        color: var(--col-gray-500);
+    }
+
+    .work-status__content--job-search {
+        background-color: var(--col-dark-850);
+        color: var(--col-gray-500);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

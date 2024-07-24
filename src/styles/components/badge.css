@@ -1,0 +1,19 @@
+.badge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 12.5px;
+    background-color: rgba(119, 119, 119, 0.2);
+    width: fit-content;
+    gap: 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: grey;
+    border-radius: 100px;
+    font-size: 0.9rem;
+    transition: background var(--theme-time-transition) ease-in-out, color var(--theme-time-transition) ease-in-out;
+
+    .icon {
+        font-size: 1.3rem;
+    }
+}

@@ -1,0 +1,25 @@
+.translate_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.translate_button__icon {
+    font-size: 2rem;
+}
+
+.translate_button__down_icon {
+    font-size: 1.3rem;
+}
+
+:is(html.light) .translate_button {
+    color: var(--col-gray-500);
+}
+
+:is(html.dark) .translate_button {
+    color: var(--col-gray-700);
+}

@@ -1,0 +1,50 @@
+---
+import './styles.css'
+
+import WorkStatus from '../../components/WorkStatus/WorkStatus.astro'
+import LinkButton from '../../components/LinkButton/LinkButton.astro'
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<section id="home" class="hero-section">
+    <div class="hero-section__author">
+        <div>
+            <h1>
+                <span>{t('hero-author.greeting')}</span>
+                <span>Emerzon Javier</span>
+                <span>Kolki Martinez</span>
+            </h1>
+
+            <WorkStatus isWorking={false} />
+        </div>
+
+        <p class="hero-section__author__presentation">
+            <span>{t('hero-author.role')}</span>. {t('hero-author.location')}
+            <span>{t('hero-author.funfact')}</span>
+        </p>
+
+        <div class="hero-section__links">
+            <LinkButton
+                icon="hugeicons:mail-send-02"
+                title={t('hero-links.contact')}
+                href="nailto:emerzonkolki@gmail.com"
+            />
+            <LinkButton
+                icon="hugeicons:linkedin-01"
+                title="LinkedIn"
+                href="https://www.linkedin.com/in/emerzonkolkimartinez/"
+            />
+            <LinkButton
+                icon="hugeicons:github"
+                title="GitHub"
+                href="https://github.com/JasonCrk"
+            />
+        </div>
+    </div>
+
+    <div style="width: 400px;"></div>
+</section>

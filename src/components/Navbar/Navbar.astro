@@ -1,0 +1,53 @@
+---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+import './styles.css'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<nav class="navbar">
+    <a href={`/${lang}/#home`}>{t('nav.home')}</a>
+    <a href={`/${lang}/#projects`}>{t('nav.projects')}</a>
+    <a href={`/${lang}/#skills`}>{t('nav.skills')}</a>
+    <a href={`/${lang}/#aboutme`}>{t('nav.aboutMe')}</a>
+</nav>
+
+<script is:inline type="module" lang="ts">
+    document.addEventListener('DOMContentLoaded', () => {
+        const $navbarLinks = document.querySelectorAll('.navbar a')
+        const $sections = document.querySelectorAll('section')
+
+        const observeSectionsCallback = (entries, _) => {
+            entries.forEach(entry => {
+                const $link = document.querySelector(
+                    `.navbar a[href*="/#${entry.target.id}"]`,
+                )
+
+                if (entry.isIntersecting) {
+                    $navbarLinks.forEach(link =>
+                        link.classList.remove('active'),
+                    )
+
+                    if ($link) {
+                        $link.classList.add('active')
+                        window.history.pushState(
+                            null,
+                            null,
+                            `#${entry.target.id}`,
+                        )
+                    }
+                }
+            })
+        }
+
+        const observer = new IntersectionObserver(observeSectionsCallback, {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5,
+        })
+
+        $sections.forEach(section => observer.observe(section))
+    })
+</script>

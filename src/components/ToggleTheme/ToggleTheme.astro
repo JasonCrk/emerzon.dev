@@ -1,0 +1,32 @@
+---
+import './styles.css'
+
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="toggle-theme-container">
+    <button id="toggleTheme" class="toggle-theme-button">
+        <Icon name="hugeicons:moon-01" id="moon-icon" />
+        <Icon name="hugeicons:sun-03" id="sun-icon" />
+    </button>
+    <div class="effect-shadow"></div>
+</div>
+
+<script is:inline>
+    const $toggleThemeButton = document.getElementById('toggleTheme')
+    const $html = document.querySelector('html')
+
+    $toggleThemeButton.addEventListener('click', () => {
+        const isDarkMode = $html?.classList.contains('dark')
+
+        if (isDarkMode) {
+            $html?.classList.remove('dark')
+            $html?.classList.add('light')
+            window.localStorage.setItem('themeMode', 'light')
+        } else {
+            $html?.classList.remove('light')
+            $html?.classList.add('dark')
+            window.localStorage.setItem('themeMode', 'dark')
+        }
+    })
+</script>

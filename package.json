@@ -1,0 +1,25 @@
+{
+    "name": "portfolio",
+    "type": "module",
+    "author": "Emerzon Javier Kolki Martinez",
+    "version": "0.0.1",
+    "scripts": {
+        "dev": "astro dev",
+        "start": "astro dev",
+        "build": "astro check && astro build",
+        "preview": "astro preview",
+        "astro": "astro"
+    },
+    "dependencies": {
+        "@astrojs/check": "^0.7.0",
+        "@iconify-json/hugeicons": "^1.1.0",
+        "astro": "^4.11.5",
+        "astro-icon": "^1.1.0",
+        "typescript": "^5.5.3"
+    },
+    "devDependencies": {
+        "prettier": "^3.3.3",
+        "prettier-plugin-astro": "^0.14.0"
+    },
+    "packageManager": "pnpm@9.6.0+sha512.38dc6fba8dba35b39340b9700112c2fe1e12f10b17134715a4aa98ccf7bb035e76fd981cf0bb384dfa98f8d6af5481c2bef2f4266a24bfa20c34eb7147ce0b5e"
+}

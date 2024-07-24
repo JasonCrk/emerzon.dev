@@ -1,0 +1,63 @@
+#moon-icon {
+    color: var(--col-white);
+}
+
+#sun-icon {
+    color: var(--col-orange-main);
+}
+
+.toggle-theme-container {
+    position: relative;
+}
+
+.toggle-theme-button {
+    background-color: transparent;
+    padding: 0px;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.effect-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    filter: blur(11px);
+    border-radius: 50px;
+    z-index: -10;
+    transition: background-color 0.2 ease-in-out;
+}
+
+:is(html.dark) .toggle-theme-button {
+    #moon-icon {
+        display: block;
+    }
+
+    #sun-icon {
+        display: none;
+    }
+}
+
+:is(html.light) .toggle-theme-button {
+    #sun-icon {
+        display: block;
+    }
+
+    #moon-icon {
+        display: none;
+    }
+}
+
+:is(html.dark) .effect-shadow {
+    background-color: var(--col-primary-main);
+    width: 32px;
+    height: 32px;
+    transform: translate(-2px, -2px);
+}
+
+:is(html.light) .effect-shadow {
+    background-color: rgba(var(--col-orange-main--rgb), 0.4);
+    width: 28px;
+    height: 28px;
+    transform: translate(1px, 1px);
+}

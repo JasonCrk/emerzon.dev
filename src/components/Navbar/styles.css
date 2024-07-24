@@ -1,0 +1,57 @@
+.navbar {
+    padding: 5px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition:
+        background-color var(--theme-time-transition) ease-in-out,
+        color var(--theme-time-transition) ease-in-out;
+
+    a {
+        transition:
+            background-color var(--theme-time-transition) ease-in-out,
+            color var(--theme-time-transition) ease-in-out;
+        padding: 8px 14px;
+        font-size: 0.9rem;
+        border-radius: 100px;
+    }
+}
+
+:is(html.dark) .navbar {
+    color: var(--col-white);
+    background-color: var(--col-dark-850);
+
+    a:hover {
+        background-color: var(--col-dark-200);
+    }
+
+    a.active {
+        background-color: var(--col-dark-300);
+
+        &:hover {
+            background-color: var(--col-dark-200);
+        }
+    }
+}
+
+:is(html.light) .navbar {
+    background-color: var(--col-white);
+    box-shadow: 0px 3px 10px 0 rgba(187, 188, 204, 0.1);
+
+    a {
+        color: var(--col-dark-main);
+
+        &:hover {
+            background-color: var(--col-light-100);
+        }
+    }
+
+    a.active {
+        background-color: var(--col-light-80);
+
+        &:hover {
+            background-color: var(--col-light-100);
+        }
+    }
+}

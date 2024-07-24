@@ -1,0 +1,29 @@
+:root {
+    --col-white: #ffffff;
+
+    --col-light-100: #f1f1f7;
+    --col-light-80: #f7f7fa;
+    --col-light-50: #fcfcff;
+
+    --col-gray-700: #85858e;
+    --col-gray-500: #9d9da9;
+    --col-gray-100: #e3e3f3;
+
+    --col-dark-main: #151517;
+    --col-dark-850: #232326;
+    --col-dark-300: #2b2b30;
+    --col-dark-200: #36363b;
+
+    --col-primary-main: #4950e5;
+    --col-primary-100: #eaebff;
+    --col-primary-main--rgb: 73, 80, 229;
+
+    --col-green-main: #17dc42;
+    --col-green-100: #eefff2;
+    --col-green-main--rgb: 23, 220, 66;
+
+    --col-orange-main: #ffcd1e;
+    --col-orange-main--rgb: 255, 205, 30;
+
+    --theme-time-transition: 0.15s;
+}
