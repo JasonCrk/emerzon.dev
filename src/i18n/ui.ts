@@ -7,6 +7,8 @@ export const defaultLang = 'es'
 
 export const ui = {
     es: {
+        'translation.spanish': 'Español',
+        'translation.english': 'Ingles',
         'nav.home': 'Inicio',
         'nav.projects': 'Proyectos',
         'nav.skills': 'Conocimientos',
@@ -20,6 +22,8 @@ export const ui = {
         'hero-links.contact': 'Contactame',
     },
     en: {
+        'translation.spanish': 'Spanish',
+        'translation.english': 'English',
         'nav.home': 'Home',
         'nav.projects': 'Projects',
         'nav.skills': 'Skills',

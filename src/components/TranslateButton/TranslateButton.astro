@@ -1,10 +1,48 @@
 ---
+import { Icon } from 'astro-icon/components'
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
 import './styles.css'
 
-import { Icon } from 'astro-icon/components'
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
 ---
 
-<button class="translate_button">
-    <Icon name="hugeicons:translate" class="translate_button__icon" />
-    <Icon name="hugeicons:arrow-down-01" class="translate_button__down_icon" />
-</button>
+<div class="translate-container">
+    <label for="translateButton" class="translate__button">
+        <Icon
+            name="hugeicons:translate"
+            class="translate__button__primary-icon"
+        />
+        <Icon
+            name="hugeicons:arrow-down-01"
+            class="translate__button__down_icon"
+        />
+        <input id="translateButton" type="checkbox" />
+    </label>
+
+    <menu class="translate__menu-languages">
+        <a href="/es" class="language">🇵🇪 {t('translation.spanish')}</a>
+        <a href="/en" class="language">🇺🇸 {t('translation.english')}</a>
+    </menu>
+</div>
+
+<script is:inline lang="ts">
+    document.addEventListener('DOMContentLoaded', () => {
+        const $languageLinks = document.querySelectorAll(
+            '.translate__menu-languages a',
+        )
+        const language = document.querySelector('html')?.getAttribute('lang')
+
+        const $selectedLanguage = document.querySelector(
+            `.translate__menu-languages a[href="/${language}"]`,
+        )
+
+        $languageLinks.forEach(link => link.classList.remove('active'))
+
+        if ($selectedLanguage) {
+            $selectedLanguage.classList.add('language-selected')
+        }
+    })
+</script>

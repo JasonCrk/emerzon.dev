@@ -26,4 +26,6 @@
     --col-orange-main--rgb: 255, 205, 30;
 
     --theme-time-transition: 0.15s;
+
+    --card-shadow-properties: 0px 3px 10px 0
 }
