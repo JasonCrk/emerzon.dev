@@ -1,7 +1,7 @@
 ---
 import Navbar from '../components/Navbar/Navbar.astro'
 import ToggleTheme from '../components/ToggleTheme/ToggleTheme.astro'
-import TranslateButton from '../components/TranslateButton/TranslateButton.astro'
+import TranslateMenuButton from '../components/TranslateMenuButton/TranslateMenuButton.astro'
 
 import { getLangFromUrl } from '../i18n/utils'
 
@@ -24,7 +24,7 @@ const lang = getLangFromUrl(Astro.url)
     </head>
     <body>
         <header>
-            <TranslateButton />
+            <TranslateMenuButton />
             <Navbar />
             <ToggleTheme />
         </header>
@@ -73,5 +73,16 @@ const lang = getLangFromUrl(Astro.url)
         justify-content: space-between;
         align-items: center;
         position: fixed;
+    }
+
+    .main-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .main-container__content {
+        width: 100%;
+        max-width: 1000px;
     }
 </style>
