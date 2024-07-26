@@ -18,7 +18,7 @@ export const ui = {
         'work-status.job-search': 'Disponible para trabajar',
         'hero-author.role': 'Desarrollador Backend',
         'hero-author.location': 'Soy de Trujillo, La Libertad, Perú 🇵🇪.',
-        'hero-author.funfact': 'Autodidacta desde los 14 años',
+        'hero-author.funfact': 'Autodidacta desde los 14 años.',
         'hero-links.contact': 'Contactame',
     },
     en: {
@@ -33,7 +33,7 @@ export const ui = {
         'work-status.job-search': 'Available for work',
         'hero-author.role': 'Backend Developer',
         'hero-author.location': "I'm from Trujillo, La Libertad, Peru 🇵🇪.",
-        'hero-author.funfact': 'Self-dictated since the age of 14',
+        'hero-author.funfact': 'Self-dictated since the age of 14.',
         'hero-links.contact': 'Contact me',
     },
 } as const
