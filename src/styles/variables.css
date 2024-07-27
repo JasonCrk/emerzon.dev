@@ -25,6 +25,9 @@
     --col-orange-main: #ffcd1e;
     --col-orange-main--rgb: 255, 205, 30;
 
+    --col-youtube-background-main--dark: rgba(36, 36, 36, 0.8);
+    --col-youtube-background-main--light: rgba(0, 0, 0, 0.06);
+
     --theme-time-transition: 0.15s;
 
     --card-shadow-properties: 0px 3px 10px 0

@@ -1,0 +1,187 @@
+---
+import './styles.css'
+
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+
+import { getLangFromUrl } from '../../../i18n/utils'
+
+import youTubeCloneIcon from '../../../assets/images/youtube-icon.png'
+import dockerIcon from '../../../assets/images/Docker.png'
+import reactIcon from '../../../assets/images/React.png'
+import typeScriptIcon from '../../../assets/images/TypeScript.png'
+import pythonIcon from '../../../assets/images/Python.png'
+import postgreSqlIcon from '../../../assets/images/PostgreSQL.png'
+import djangoIcon from '../../../assets/images/Django.png'
+import materialUiIcon from '../../../assets/images/MaterialUI.png'
+import tanStackIcon from '../../../assets/images/TanStack.png'
+import cloudinaryIcon from '../../../assets/images/Cloudinary.png'
+
+const lang = getLangFromUrl(Astro.url)
+---
+
+<a class="card-project--youtube-clone" href={`/${lang}/projects/youtube_clone`}>
+    <div class="card-project--youtube-clone__grow"></div>
+
+    <Icon
+        class="card-project--youtube-clone__decoration card-project--youtube-clone__decoration--play"
+        name="mdi:play"
+    />
+    <Icon
+        class="card-project--youtube-clone__decoration card-project--youtube-clone__decoration--subscription"
+        name="mdi:youtube-subscription"
+    />
+    <Icon
+        class="card-project--youtube-clone__decoration card-project--youtube-clone__decoration--like"
+        name="mdi:like"
+    />
+    <Icon
+        class="card-project--youtube-clone__decoration card-project--youtube-clone__decoration--history"
+        name="mdi:history"
+    />
+    <Icon
+        class="card-project--youtube-clone__decoration card-project--youtube-clone__decoration--playlist-play"
+        name="mdi:playlist-play"
+    />
+    <Icon
+        class="card-project--youtube-clone__decoration card-project--youtube-clone__decoration--account"
+        name="mdi:account-circle"
+    />
+    <Icon
+        class="card-project--youtube-clone__decoration card-project--youtube-clone__decoration--watch-later"
+        name="mdi:watch-later"
+    />
+    <Icon
+        class="card-project--youtube-clone__decoration card-project--youtube-clone__decoration--notifications-active"
+        name="mdi:notifications-active"
+    />
+    <Icon
+        class="card-project--youtube-clone__decoration card-project--youtube-clone__decoration--search"
+        name="mdi:search"
+    />
+    <Icon
+        class="card-project--youtube-clone__decoration card-project--youtube-clone__decoration--library-video"
+        name="mdi:library-video"
+    />
+    <Icon
+        class="card-project--youtube-clone__decoration card-project--youtube-clone__decoration--video-plus"
+        name="mdi:video-plus"
+    />
+    <Icon
+        class="card-project--youtube-clone__decoration card-project--youtube-clone__decoration--comment"
+        name="mdi:comment-text-outline"
+    />
+
+    <div class="card-project--youtube-clone__content">
+        <div class="card-project--youtube-clone__content__stack">
+            <Image
+                class="card-project--youtube-clone__content__stack__tech"
+                src={typeScriptIcon}
+                alt="TypeScript"
+            />
+            <Image
+                class="card-project--youtube-clone__content__stack__tech"
+                src={reactIcon}
+                alt="React"
+            />
+            <Image
+                class="card-project--youtube-clone__content__stack__tech"
+                src={materialUiIcon}
+                alt="Material UI"
+            />
+            <Image
+                class="card-project--youtube-clone__content__stack__tech"
+                src={tanStackIcon}
+                alt="TanStackIcon"
+            />
+            <Image
+                class="card-project--youtube-clone__content__stack__tech"
+                src={pythonIcon}
+                alt="Python"
+            />
+            <Image
+                class="card-project--youtube-clone__content__stack__tech"
+                src={djangoIcon}
+                alt="Django"
+            />
+            <Image
+                class="card-project--youtube-clone__content__stack__tech"
+                src={postgreSqlIcon}
+                alt="PostgreSQL"
+            />
+            <Image
+                class="card-project--youtube-clone__content__stack__tech"
+                src={dockerIcon}
+                alt="Docker"
+            />
+            <Image
+                class="card-project--youtube-clone__content__stack__tech"
+                src={cloudinaryIcon}
+                alt="Cloudinary"
+            />
+        </div>
+        <span class="card-project--youtube-clone__content__name"
+            >YouTube Clone</span
+        >
+        <Image
+            class="card-project--youtube-clone__content__icon"
+            src={youTubeCloneIcon}
+            alt="YouTube Clone Icon"
+        />
+    </div>
+
+    <div class="card-project--youtube-clone__circular-decoration"></div>
+</a>
+
+<script is:inline lang="ts">
+    const $card = document.querySelector('.card-project--youtube-clone')
+    let bounds
+
+    function rotateToMouse(e) {
+        const mouseX = e.clientX
+        const mouseY = e.clientY
+        const leftX = mouseX - bounds.x
+        const topY = mouseY - bounds.y
+        const center = {
+            x: leftX - bounds.width / 2,
+            y: topY - bounds.height / 2,
+        }
+        const distance = Math.sqrt(center.x ** 2 + center.y ** 2)
+
+        $card.style.transform = `
+        scale3d(1.07, 1.07, 1.07)
+        rotate3d(
+          ${center.y / 100},
+          ${-center.x / 100},
+          0,
+          ${Math.log(distance) * 2.8}deg
+        )
+      `
+
+        $card.querySelector(
+            '.card-project--youtube-clone__grow',
+        ).style.backgroundImage = `
+        radial-gradient(
+          circle at
+          ${center.x * 2 + bounds.width / 2}px
+          ${center.y * 2 + bounds.height / 2}px,
+          rgba(255, 255, 255, 0.1),
+          #0000000f
+        )
+      `
+    }
+
+    $card.addEventListener('mouseenter', () => {
+        bounds = $card.getBoundingClientRect()
+        document.addEventListener('mousemove', rotateToMouse)
+    })
+
+    $card.addEventListener('mouseleave', () => {
+        document.removeEventListener('mousemove', rotateToMouse)
+        $card.style.transform = ''
+        $card.style.background = ''
+        $card.querySelector(
+            '.card-project--youtube-clone__grow',
+        ).style.backgroundImage = ''
+    })
+</script>

@@ -4,7 +4,7 @@
     display: inline-flex;
     overflow: hidden;
     border-radius: 100px;
-    padding: 1.1px;
+    padding: .1rem;
 }
 
 .work-status__border--working,

@@ -1,0 +1,20 @@
+.title {
+    font-size: 1.4rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 3px;
+    margin-bottom: 28px;
+    transition: text-decoration-color var(--theme-time-transition);
+}
+
+:is(html.light) {
+    .title {
+        text-decoration-color: var(--col-gray-700);
+    }
+}
+
+:is(html.dark) {
+    .title {
+        text-decoration-color: var(--col-dark-200);
+    }
+}
