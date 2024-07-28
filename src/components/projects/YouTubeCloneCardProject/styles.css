@@ -35,8 +35,8 @@
 }
 
 .card-project--youtube-clone__content__stack__tech {
-    width: 25px;
-    height: fit-content;
+    height: 28px;
+    width: auto;
 }
 
 .card-project--youtube-clone__content__name {
