@@ -78,46 +78,64 @@ const lang = getLangFromUrl(Astro.url)
                 class="card-project--youtube-clone__content__stack__tech"
                 src={typeScriptIcon}
                 alt="TypeScript"
+                loading="eager"
+                quality="low"
             />
             <Image
                 class="card-project--youtube-clone__content__stack__tech"
                 src={reactIcon}
                 alt="React"
+                loading="eager"
+                quality="low"
             />
             <Image
                 class="card-project--youtube-clone__content__stack__tech"
                 src={materialUiIcon}
                 alt="Material UI"
+                loading="eager"
+                quality="low"
             />
             <Image
                 class="card-project--youtube-clone__content__stack__tech"
                 src={tanStackIcon}
                 alt="TanStackIcon"
+                loading="eager"
+                quality="low"
             />
             <Image
                 class="card-project--youtube-clone__content__stack__tech"
                 src={pythonIcon}
                 alt="Python"
+                loading="eager"
+                quality="low"
             />
             <Image
                 class="card-project--youtube-clone__content__stack__tech"
                 src={djangoIcon}
                 alt="Django"
+                loading="eager"
+                quality="low"
             />
             <Image
                 class="card-project--youtube-clone__content__stack__tech"
                 src={postgreSqlIcon}
                 alt="PostgreSQL"
+                loading="eager"
+                quality="low"
             />
             <Image
                 class="card-project--youtube-clone__content__stack__tech"
                 src={dockerIcon}
                 alt="Docker"
+                loading="eager"
+                quality="low"
             />
             <Image
                 class="card-project--youtube-clone__content__stack__tech"
                 src={cloudinaryIcon}
                 alt="Cloudinary"
+                loading="eager"
+                quality="low"
             />
         </div>
         <span class="card-project--youtube-clone__content__name"
@@ -127,6 +145,8 @@ const lang = getLangFromUrl(Astro.url)
             class="card-project--youtube-clone__content__icon"
             src={youTubeCloneIcon}
             alt="YouTube Clone Icon"
+            quality="low"
+            loading="eager"
         />
     </div>
 
@@ -134,21 +154,23 @@ const lang = getLangFromUrl(Astro.url)
 </a>
 
 <script is:inline lang="ts">
-    const $card = document.querySelector('.card-project--youtube-clone')
-    let bounds
+    const $youTubeCloneCard = document.querySelector(
+        '.card-project--youtube-clone',
+    )
+    let youTubeCloneBounds
 
-    function rotateToMouse(e) {
+    function rotateToMouseForYouTubeClone(e) {
         const mouseX = e.clientX
         const mouseY = e.clientY
-        const leftX = mouseX - bounds.x
-        const topY = mouseY - bounds.y
+        const leftX = mouseX - youTubeCloneBounds.x
+        const topY = mouseY - youTubeCloneBounds.y
         const center = {
-            x: leftX - bounds.width / 2,
-            y: topY - bounds.height / 2,
+            x: leftX - youTubeCloneBounds.width / 2,
+            y: topY - youTubeCloneBounds.height / 2,
         }
         const distance = Math.sqrt(center.x ** 2 + center.y ** 2)
 
-        $card.style.transform = `
+        $youTubeCloneCard.style.transform = `
         scale3d(1.07, 1.07, 1.07)
         rotate3d(
           ${center.y / 100},
@@ -158,29 +180,29 @@ const lang = getLangFromUrl(Astro.url)
         )
       `
 
-        $card.querySelector(
+        $youTubeCloneCard.querySelector(
             '.card-project--youtube-clone__grow',
         ).style.backgroundImage = `
         radial-gradient(
           circle at
-          ${center.x * 2 + bounds.width / 2}px
-          ${center.y * 2 + bounds.height / 2}px,
+          ${center.x * 2 + youTubeCloneBounds.width / 2}px
+          ${center.y * 2 + youTubeCloneBounds.height / 2}px,
           rgba(255, 255, 255, 0.1),
           #0000000f
         )
       `
     }
 
-    $card.addEventListener('mouseenter', () => {
-        bounds = $card.getBoundingClientRect()
-        document.addEventListener('mousemove', rotateToMouse)
+    $youTubeCloneCard.addEventListener('mouseenter', () => {
+        youTubeCloneBounds = $youTubeCloneCard.getBoundingClientRect()
+        document.addEventListener('mousemove', rotateToMouseForYouTubeClone)
     })
 
-    $card.addEventListener('mouseleave', () => {
-        document.removeEventListener('mousemove', rotateToMouse)
-        $card.style.transform = ''
-        $card.style.background = ''
-        $card.querySelector(
+    $youTubeCloneCard.addEventListener('mouseleave', () => {
+        document.removeEventListener('mousemove', rotateToMouseForYouTubeClone)
+        $youTubeCloneCard.style.transform = ''
+        $youTubeCloneCard.style.background = ''
+        $youTubeCloneCard.querySelector(
             '.card-project--youtube-clone__grow',
         ).style.backgroundImage = ''
     })
