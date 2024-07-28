@@ -1,14 +1,8 @@
 @import './components/badge.css';
 @import './fonts.css';
 
-:is(html.light) body {
-    background-color: var(--col-light-50);
-    color: var(--col-dark-main);
-}
-
-:is(html.dark) body {
-    background-color: var(--col-dark-main);
-    color: var(--col-white);
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -23,5 +17,15 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--col-white);
+}
+
+:is(html.light) body {
+    background-color: var(--col-light-50);
+    color: var(--col-dark-main);
+}
+
+:is(html.dark) body {
+    background-color: var(--col-dark-main);
     color: var(--col-white);
 }
