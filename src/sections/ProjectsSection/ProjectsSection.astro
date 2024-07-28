@@ -1,6 +1,8 @@
 ---
 import './styles.css'
 
+import { Icon } from 'astro-icon/components'
+
 import Title from '../../components/Title/Title.astro'
 
 import YouTubeCloneCardProject from '../../components/projects/YouTubeCloneCardProject/YouTubeCloneCardProject.astro'
@@ -13,10 +15,24 @@ const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
 
-<section class="projects-section">
-    <Title>{t('nav.projects')}</Title>
+<section class="projects-section" id="recent-projects">
+    <Title>{t('nav.recent-projects')}</Title>
 
-    <CutLinkXCardProject />
-    <YouTubeCloneCardProject />
-    <MasterEventPlannerCardProject />
+    <article>
+        <CutLinkXCardProject />
+        <YouTubeCloneCardProject />
+        <MasterEventPlannerCardProject />
+
+        <div class="show-more-projects">
+            <div class="show-more-projects__circle"></div>
+            <div class="show-more-projects__background"></div>
+            <a class="show-more-projects__link" href="projects">
+                <span>{t('projects-section.viewAllProjects')}</span>
+                <Icon
+                    class="show-more-projects__link__icon"
+                    name="hugeicons:arrow-right-01"
+                />
+            </a>
+        </div>
+    </article>
 </section>
