@@ -1,0 +1,172 @@
+---
+import './styles.css'
+
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+
+import angularIcon from '../../../assets/images/Angular.png'
+import tailwindCssIcon from '../../../assets/images/TailwindCSS.png'
+import typeScriptIcon from '../../../assets/images/TypeScript.png'
+import javaIcon from '../../../assets/images/Java.png'
+import springBootIcon from '../../../assets/images/Spring-Boot.png'
+import mariaDbIcon from '../../../assets/images/MariaDB.png'
+import dockerIcon from '../../../assets/images/Docker.png'
+import firebaseIcon from '../../../assets/images/Firebase.png'
+---
+
+<a
+    class="card-project--master-event-planner"
+    href="/projects/master-event-planner"
+>
+    <div class="card-project--master-event-planner__grow"></div>
+
+    <Icon
+        class="card-project--master-event-planner__decoration card-project--master-event-planner__decoration--notifications"
+        name="mdi:notifications-active"
+    />
+    <Icon
+        class="card-project--master-event-planner__decoration card-project--master-event-planner__decoration--calendar"
+        name="mdi:calendar-multiselect-outline"
+    />
+
+    <div class="card-project--master-event-planner__content">
+        <div class="card-project--master-event-planner__content__decoration">
+            <div class="decoration__dots">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="decoration__stack">
+                <Image
+                    src={typeScriptIcon}
+                    alt="Typescript"
+                    loading="lazy"
+                    decoding="async"
+                />
+                <Image
+                    src={angularIcon}
+                    alt="Angular"
+                    loading="lazy"
+                    decoding="async"
+                />
+                <Image
+                    src={tailwindCssIcon}
+                    alt="Tailwind CSS"
+                    loading="lazy"
+                    decoding="async"
+                />
+            </div>
+        </div>
+
+        <p class="card-project--master-event-planner__content__name">
+            Master Event Planner
+        </p>
+
+        <div class="card-project--master-event-planner__content__decoration">
+            <div class="decoration__stack">
+                <Image
+                    src={javaIcon}
+                    alt="Java"
+                    loading="lazy"
+                    decoding="async"
+                />
+                <Image
+                    src={springBootIcon}
+                    alt="Spring Boot"
+                    loading="lazy"
+                    decoding="async"
+                />
+                <Image
+                    src={mariaDbIcon}
+                    alt="Maria DB"
+                    loading="lazy"
+                    decoding="async"
+                />
+                <Image
+                    src={dockerIcon}
+                    alt="Docker"
+                    loading="lazy"
+                    decoding="async"
+                />
+                <Image
+                    src={firebaseIcon}
+                    alt="Firebase"
+                    loading="lazy"
+                    decoding="async"
+                />
+            </div>
+
+            <div class="decoration__dots">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</a>
+
+<script is:inline lang="ts">
+    const $masterEventPlannerCard = document.querySelector(
+        '.card-project--master-event-planner',
+    )
+    let masterEventPlannerCardBounds
+
+    function rotateToMouseForMasterEventPlanner(e) {
+        const mouseX = e.clientX
+        const mouseY = e.clientY
+        const leftX = mouseX - masterEventPlannerCardBounds.x
+        const topY = mouseY - masterEventPlannerCardBounds.y
+        const center = {
+            x: leftX - masterEventPlannerCardBounds.width / 2,
+            y: topY - masterEventPlannerCardBounds.height / 2,
+        }
+        const distance = Math.sqrt(center.x ** 2 + center.y ** 2)
+
+        $masterEventPlannerCard.style.transform = `
+        scale3d(1.07, 1.07, 1.07)
+        rotate3d(
+          ${center.y / 100},
+          ${-center.x / 100},
+          0,
+          ${Math.log(distance) * 2.8}deg
+        )
+      `
+
+        $masterEventPlannerCard.querySelector(
+            '.card-project--master-event-planner__grow',
+        ).style.backgroundImage = `
+        radial-gradient(
+          circle at
+          ${center.x * 2 + masterEventPlannerCardBounds.width / 2}px
+          ${center.y * 2 + masterEventPlannerCardBounds.height / 2}px,
+          rgba(255, 255, 255, 0.1),
+          #0000000f
+        )
+      `
+    }
+
+    $masterEventPlannerCard.addEventListener('mouseenter', () => {
+        masterEventPlannerCardBounds =
+            $masterEventPlannerCard.getBoundingClientRect()
+        document.addEventListener(
+            'mousemove',
+            rotateToMouseForMasterEventPlanner,
+        )
+    })
+
+    $masterEventPlannerCard.addEventListener('mouseleave', () => {
+        document.removeEventListener(
+            'mousemove',
+            rotateToMouseForMasterEventPlanner,
+        )
+        $masterEventPlannerCard.style.transform = ''
+        $masterEventPlannerCard.style.background = ''
+        $masterEventPlannerCard.querySelector(
+            '.card-project--master-event-planner__grow',
+        ).style.backgroundImage = ''
+    })
+</script>
