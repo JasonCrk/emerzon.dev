@@ -26,12 +26,13 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 10px;
 }
 
 .card-project--youtube-clone__content__stack {
     display: flex;
     align-items: center;
-    gap: .6rem;
+    gap: 8px;
 }
 
 .card-project--youtube-clone__content__stack__tech {
@@ -43,11 +44,12 @@
     font-size: 4rem;
     font-family: 'Roboto Condensed';
     font-weight: bold;
+    line-height: 0.9;
 }
 
 .card-project--youtube-clone__content__icon {
-    width: 50px;
-    height: fit-content;
+    width: auto;
+    height: 50px;
 }
 
 .card-project--youtube-clone__circular-decoration {
