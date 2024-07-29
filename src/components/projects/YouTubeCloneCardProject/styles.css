@@ -38,6 +38,7 @@
 .card-project--youtube-clone__content__stack__tech {
     height: 28px;
     width: auto;
+    z-index: 10;
 }
 
 .card-project--youtube-clone__content__name {
@@ -45,11 +46,13 @@
     font-family: 'Roboto Condensed';
     font-weight: bold;
     line-height: 0.9;
+    z-index: 10;
 }
 
 .card-project--youtube-clone__content__icon {
     width: auto;
     height: 50px;
+    z-index: 10;
 }
 
 .card-project--youtube-clone__circular-decoration {
