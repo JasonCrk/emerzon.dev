@@ -6,6 +6,7 @@ footer {
     border-radius: 100px;
     margin-top: 40px;
     margin-bottom: 25px;
+    transition: background-color var(--theme-time-transition);
 }
 
 .footer__go-top {
@@ -20,6 +21,7 @@ footer {
         display: flex;
         align-items: center;
         gap: 4px;
+        transition: color var(--theme-time-transition);
 
         &:hover {
             text-decoration: underline;
