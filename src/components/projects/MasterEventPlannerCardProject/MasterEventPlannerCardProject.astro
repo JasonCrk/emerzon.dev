@@ -91,14 +91,14 @@ import firebaseIcon from '../../../assets/images/Firebase.png'
         const distance = Math.sqrt(center.x ** 2 + center.y ** 2)
 
         $masterEventPlannerCard.style.transform = `
-        scale3d(1.07, 1.07, 1.07)
-        rotate3d(
-          ${center.y / 100},
-          ${-center.x / 100},
-          0,
-          ${Math.log(distance) * 2.8}deg
-        )
-      `
+            scale3d(1.07, 1.07, 1.07)
+            rotate3d(
+              ${center.y / 100},
+              ${-center.x / 100},
+              0,
+              ${Math.log(distance) * 2.4}deg
+            )
+          `
 
         $masterEventPlannerCard.querySelector(
             '.card-project--master-event-planner__grow',
