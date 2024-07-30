@@ -3,13 +3,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
 
 import HeroSection from '../../sections/HeroSection/HeroSection.astro'
 import ProjectsSection from '../../sections/ProjectsSection/ProjectsSection.astro'
+import AboutMeSection from '../../sections/AboutMeSection/AboutMeSection.astro'
 ---
 
 <BaseLayout title="Home">
     <HeroSection />
-    <div class="main-container">
-        <div class="main-container__content">
-            <ProjectsSection />
-        </div>
-    </div>
+    <ProjectsSection />
+    <AboutMeSection />
 </BaseLayout>

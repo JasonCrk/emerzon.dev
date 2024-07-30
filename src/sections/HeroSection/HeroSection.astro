@@ -9,9 +9,7 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils'
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
-
-<section id="home" class="hero-section">
-    <div class="hero-section__author">
+<section id="home" class="hero-section"> <div class="hero-section__author">
         <div>
             <h1>
                 <span>{t('hero-author.greeting')}</span>
@@ -19,7 +17,14 @@ const t = useTranslations(lang)
                 <span>Kolki Martinez</span>
             </h1>
 
-            <WorkStatus isWorking={false} />
+            <div class="hero-section__author__work">
+                <LinkButton
+                    icon="hugeicons:document-attachment"
+                    title="CV"
+                    href="/documents/hello.pdf"
+                />
+                <WorkStatus isWorking={false} />
+            </div>
         </div>
 
         <p class="hero-section__author__presentation">

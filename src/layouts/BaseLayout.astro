@@ -2,6 +2,7 @@
 import Navbar from '../components/Navbar/Navbar.astro'
 import ToggleTheme from '../components/ToggleTheme/ToggleTheme.astro'
 import TranslateMenuButton from '../components/TranslateMenuButton/TranslateMenuButton.astro'
+import ContactFooter from '../sections/ContactFooter/ContactFooter.astro'
 
 import { getLangFromUrl } from '../i18n/utils'
 
@@ -29,7 +30,13 @@ const lang = getLangFromUrl(Astro.url)
             <ToggleTheme />
         </header>
 
-        <slot />
+        <main>
+            <div class="main-content">
+                <slot />
+
+                <ContactFooter />
+            </div>
+        </main>
     </body>
 </html>
 
@@ -76,14 +83,14 @@ const lang = getLangFromUrl(Astro.url)
         z-index: 100;
     }
 
-    .main-container {
+    main {
         display: flex;
         align-items: center;
         flex-direction: column;
-    }
 
-    .main-container__content {
-        width: 100%;
-        max-width: 1000px;
+        .main-content {
+            width: 100%;
+            max-width: 1000px;
+        }
     }
 </style>

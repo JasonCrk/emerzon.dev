@@ -1,9 +1,8 @@
 .hero-section {
     height: 92vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 15px;
+    justify-content: space-between;
 }
 
 .hero-section__author {
@@ -27,9 +26,16 @@
 
             &:nth-child(3) {
                 margin-left: 80px;
+                text-wrap: nowrap;
             }
         }
     }
+}
+
+.hero-section__author__work {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .hero-section__author__presentation {

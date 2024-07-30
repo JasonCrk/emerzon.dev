@@ -1,0 +1,47 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 100px;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.footer__go-top {
+    font-weight: 600;
+}
+
+.footer__links {
+    display: flex;
+    gap: 16px;
+
+    a {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 2px;
+        }
+    }
+}
+
+:is(html.light) {
+    footer {
+        background-color: white;
+        box-shadow: var(--card-shadow-properties) rgba(187, 188, 204, 0.5);
+
+        a {
+            color: var(--col-dark-main);
+        }
+    }
+}
+
+:is(html.dark) {
+    footer {
+        background-color: var(--col-dark-850);
+    }
+}
