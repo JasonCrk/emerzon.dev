@@ -29,6 +29,9 @@
     --col-youtube-background-main--dark: rgba(36, 36, 36, 0.8);
     --col-youtube-background-main--light: rgba(0, 0, 0, 0.06);
 
+    --col-cut-link-background-main--dark: rgba(208, 219, 241, .1);
+    --col-cut-link-background-main--light: rgba(208, 219, 241, .2);
+
     --theme-time-transition: 0.15s;
 
     --card-shadow-properties: 0px 3px 10px 0

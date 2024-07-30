@@ -1,3 +1,178 @@
 ---
 import './styles.css'
+
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+
+import typeScriptIcon from '../../../assets/images/TypeScript.png'
+import reactIcon from '../../../assets/images/React.png'
+import tailwindCssIcon from '../../../assets/images/TailwindCSS.png'
+import pythonIcon from '../../../assets/images/Python.png'
+import fastAPIIcon from '../../../assets/images/FastAPI.png'
+import mySqlIcon from '../../../assets/images/MySQL.png'
+import dockerIcon from '../../../assets/images/Docker.png'
 ---
+
+<a class="card-project--cut-link" href="/projects/cut-link">
+    <div class="card-project--cut-link__grow"></div>
+
+    <div
+        class="card-project--cut-link__circular-decoration card-project--cut-link__circular-decoration--first"
+    >
+    </div>
+    <div
+        class="card-project--cut-link__circular-decoration card-project--cut-link__circular-decoration--second"
+    >
+    </div>
+
+    <span
+        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--1"
+        >https://cutlinkx.com/jasoncrk-github</span
+    >
+    <span
+        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--2"
+        >https://cutlinkx.com/jasoncr</span
+    >
+    <span
+        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--3"
+        >https://cutlinkx.com/jasoncr</span
+    >
+    <span
+        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--4"
+        >https://cutlinkx.com/jasoncr</span
+    >
+    <span
+        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--5"
+        >https://cutlinkx.com/jasoncr</span
+    >
+    <span
+        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--6"
+        >https://cutlinkx.com/jasoncr</span
+    >
+    <span
+        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--7"
+        >https://cutlinkx.com/jasoncr</span
+    >
+    <span
+        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--8"
+        >https://cutlinkx.com/jasoncr</span
+    >
+    <span
+        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--9"
+        >https://cutlinkx.com/jasoncr</span
+    >
+
+    <div class="card-project--cut-link__content">
+        <p class="card-project--cut-link__content__name">
+            <span>CutLink</span>
+            <Icon
+                class="card-project--cut-link__content__name__icon"
+                name="mdi:scissors"
+            />
+        </p>
+        <div class="card-project--cut-link__content__stack">
+            <Image
+                class="card-project--cut-link__content__stack__tech"
+                src={typeScriptIcon}
+                alt="TypeSCript"
+                loading="eager"
+                title="TypeScript"
+            />
+            <Image
+                class="card-project--cut-link__content__stack__tech"
+                src={reactIcon}
+                alt="React"
+                loading="eager"
+                title="React"
+            />
+            <Image
+                class="card-project--cut-link__content__stack__tech"
+                src={tailwindCssIcon}
+                alt="TailwindCSS"
+                loading="eager"
+                title="TailwindCSS"
+            />
+            <Image
+                class="card-project--cut-link__content__stack__tech"
+                src={pythonIcon}
+                alt="Python"
+                loading="eager"
+                title="Python"
+            />
+            <Image
+                class="card-project--cut-link__content__stack__tech"
+                src={fastAPIIcon}
+                alt="FastAPI"
+                loading="eager"
+                title="FastAPI"
+            />
+            <Image
+                class="card-project--cut-link__content__stack__tech"
+                src={mySqlIcon}
+                alt="MySQL"
+                loading="eager"
+                title="MySQL"
+            />
+            <Image
+                class="card-project--cut-link__content__stack__tech"
+                src={dockerIcon}
+                alt="Docker"
+                loading="eager"
+                title="Docker"
+            />
+        </div>
+    </div>
+</a>
+
+<script is:inline lang="ts">
+    const $cutLinkXCard = document.querySelector('.card-project--cut-link')
+    let cutLinkXBounds
+
+    function rotateToMouseForCutLinkX(e) {
+        const mouseX = e.clientX
+        const mouseY = e.clientY
+        const leftX = mouseX - cutLinkXBounds.x
+        const topY = mouseY - cutLinkXBounds.y
+        const center = {
+            x: leftX - cutLinkXBounds.width / 2,
+            y: topY - cutLinkXBounds.height / 2,
+        }
+        const distance = Math.sqrt(center.x ** 2 + center.y ** 2)
+
+        $cutLinkXCard.style.transform = `
+        scale3d(1.07, 1.07, 1.07)
+        rotate3d(
+          ${center.y / 100},
+          ${-center.x / 100},
+          0,
+          ${Math.log(distance) * 2.4}deg
+        )
+      `
+
+        $cutLinkXCard.querySelector(
+            '.card-project--cut-link__grow',
+        ).style.backgroundImage = `
+        radial-gradient(
+          circle at
+          ${center.x * 2 + cutLinkXBounds.width / 2}px
+          ${center.y * 2 + cutLinkXBounds.height / 2}px,
+          rgba(255, 255, 255, 0.1),
+          #0000000f
+        )
+      `
+    }
+
+    $cutLinkXCard.addEventListener('mouseenter', () => {
+        cutLinkXBounds = $cutLinkXCard.getBoundingClientRect()
+        document.addEventListener('mousemove', rotateToMouseForCutLinkX)
+    })
+
+    $cutLinkXCard.addEventListener('mouseleave', () => {
+        document.removeEventListener('mousemove', rotateToMouseForCutLinkX)
+        $cutLinkXCard.style.transform = ''
+        $cutLinkXCard.style.background = ''
+        $cutLinkXCard.querySelector(
+            '.card-project--cut-link__grow',
+        ).style.backgroundImage = ''
+    })
+</script>
