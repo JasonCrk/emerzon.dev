@@ -7,20 +7,22 @@ import { Icon } from 'astro-icon/components'
 const lang = getLangFromUrl(Astro.url)
 ---
 
-<footer>
-    <a class="footer__go-top" href={`/${lang}/#home`}> Emerzon Javier Kolki Martinez </a>
+<footer id="contact">
+    <a class="footer__go-top" href={`/${lang}/#home`}>
+        Emerzon Javier Kolki Martinez
+    </a>
 
     <div class="footer__links">
-        <a href="mailto:emerzonkolki@gmail.com" target='_blank'>
+        <a href="mailto:emerzonkolki@gmail.com" target="_blank">
             Contactame <Icon name="hugeicons:link-square-02" />
         </a>
-        <a href="https://github.com/JasonCrk" target='_blank'>
+        <a href="https://github.com/JasonCrk" target="_blank">
             GitHub <Icon name="hugeicons:link-square-02" />
         </a>
-        <a href="https://linkedin.com/in/emerzonkolkimartinez" target='_blank'>
+        <a href="https://linkedin.com/in/emerzonkolkimartinez" target="_blank">
             LinkedIn <Icon name="hugeicons:link-square-02" />
         </a>
-        <a href="/documents/text.pdf" target='_blank'>
+        <a href="/documents/text.pdf" target="_blank">
             CV <Icon name="hugeicons:document-attachment" />
         </a>
     </div>

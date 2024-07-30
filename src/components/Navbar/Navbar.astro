@@ -12,6 +12,7 @@ const t = useTranslations(lang)
     <a href={`/${lang}/#recent-projects`}>{t('nav.recent-projects')}</a>
     <a href={`/${lang}/#skills`}>{t('nav.skills')}</a>
     <a href={`/${lang}/#aboutme`}>{t('nav.aboutMe')}</a>
+    <a href={`/${lang}/#contact`}>{t('nav.contact')}</a>
 </nav>
 
 <script is:inline type="module" lang="ts">
@@ -45,7 +46,7 @@ const t = useTranslations(lang)
         const observer = new IntersectionObserver(observeSectionsCallback, {
             root: null,
             rootMargin: '0px',
-            threshold: 0.5,
+            threshold: 0.6,
         })
 
         $sections.forEach(section => observer.observe(section))

@@ -21,6 +21,7 @@ export const ui = {
         'hero-author.funfact': 'Autodidacta desde los 14 años.',
         'hero-links.contact': 'Contactame',
         'projects-section.viewAllProjects': 'Ver todos los proyectos',
+        'nav.contact': 'Contacto',
     },
     en: {
         'translation.spanish': 'Spanish',
@@ -37,5 +38,6 @@ export const ui = {
         'hero-author.funfact': 'Self-dictated since the age of 14.',
         'hero-links.contact': 'Contact me',
         'projects-section.viewAllProjects': 'View all projects',
+        'nav.contact': 'Contact',
     },
 } as const
