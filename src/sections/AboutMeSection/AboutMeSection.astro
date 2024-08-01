@@ -1,0 +1,102 @@
+---
+import './styles.css'
+
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+
+import Title from '../../components/Title/Title.astro'
+
+import { getLangFromUrl, useTranslations } from '../../i18n/utils'
+
+import photo from '../../assets/images/Emerzon Javier Kolki Martinez.png'
+
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+<section id="aboutme">
+    <Title>{t('nav.aboutMe')}</Title>
+
+    <article>
+        <div class="aboutme__presentation">
+            <p class="aboutme__presentation__content">
+                Mi viaje en el mundo de la programación comenzó de manera
+                autodidacta a la temprana edad de 14 años. Desde entonces, he
+                desarrollado sistemas, aplicaciones web y servicios.
+
+                <br />
+                <br />
+
+                En la actualidad, estoy cursando el 5to ciclo de mi carrera
+                "Computación e informática" en el Instituto Tecnológico Privado
+                CIBERTEC. Desde mi ingreso, he destacado notablemente gracias a
+                mis sólidos conocimientos y las aplicaciones que he
+                desarrollado. Uno de mis logros en CIBERTEC fue con la app
+                "Control Interno de Almacen", que no solo fue reconocida por mis
+                compañeros y profesores, sino que fue expuesta y premiado en la
+                "Feria de Proyectos 2023 de CIBERTEC" en la cede de Trujillo.
+
+                <br />
+                <br />
+
+                A pesar de que esta aplicación recibió reconocimiento, no
+                representa el punto más alto de mis conocimientos.
+            </p>
+
+            <div class="aboutme__presentation__photo-section">
+                <Image
+                    class="aboutme__presentation__photo-section__photo"
+                    src={photo}
+                    alt="Emerzon Javier Kolki Martinez"
+                />
+            </div>
+        </div>
+
+        <div class="aboutme__section">
+            <div class="aboutme__section__title">
+                <Icon
+                    class="aboutme__section__title__icon"
+                    name="hugeicons:message-multiple-01"
+                />
+                <strong>{t('aboutme.languages')}</strong>
+            </div>
+            <ul class="aboutme__section__list">
+                <li>
+                    {t('translation.spanish')} - {
+                        t('aboutme.languages.spanish-level')
+                    }
+                </li>
+                <li>{t('translation.english')} - B1</li>
+            </ul>
+        </div>
+
+        <div class="aboutme__section">
+            <div class="aboutme__section__title">
+                <Icon
+                    class="aboutme__section__title__icon"
+                    name="hugeicons:diploma"
+                />
+                <strong>{t('aboutme.education')}</strong>
+            </div>
+            <ul class="aboutme__section__list">
+                <li>{t('aboutme.education.cibertec')}</li>
+            </ul>
+        </div>
+
+        <div class="aboutme__section">
+            <div class="aboutme__section__title">
+                <Icon
+                    class="aboutme__section__title__icon"
+                    name="hugeicons:user-group"
+                />
+                <strong>{t('aboutme.soft-skills')}</strong>
+            </div>
+            <ul class="aboutme__section__list">
+                <li>{t('aboutme.soft-skills.teamwork')}</li>
+                <li>{t('aboutme.soft-skills.time-management')}</li>
+                <li>{t('aboutme.soft-skills.problem-solving')}</li>
+                <li>{t('aboutme.soft-skills.self-motivation')}</li>
+            </ul>
+        </div>
+    </article>
+</section>
