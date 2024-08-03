@@ -20,7 +20,7 @@ export const ui = {
         'hero-author.location': 'Soy de Trujillo, La Libertad, Perú 🇵🇪.',
         'hero-author.funfact': 'Autodidacta desde los 14 años.',
         'hero-links.contact': 'Contactame',
-        'projects-section.viewAllProjects': 'Ver todos los proyectos',
+        'projects-section.see-all-projects': 'Ver todos los proyectos',
         'aboutme.languages': 'Idiomas',
         'aboutme.education': 'Educación',
         'aboutme.soft-skills': 'Habilidades blandas',
@@ -31,6 +31,7 @@ export const ui = {
         'aboutme.soft-skills.self-motivation': 'Automotivación',
         'aboutme.soft-skills.teamwork': 'Trabajo en equipo',
         'aboutme.soft-skills.problem-solving': 'Resolución de problemas',
+        'projects.title': 'Proyectos',
     },
     en: {
         'translation.spanish': 'Spanish',
@@ -46,7 +47,7 @@ export const ui = {
         'hero-author.location': "I'm from Trujillo, La Libertad, Peru 🇵🇪.",
         'hero-author.funfact': 'Self-dictated since the age of 14.',
         'hero-links.contact': 'Contact me',
-        'projects-section.viewAllProjects': 'View all projects',
+        'projects-section.see-all-projects': 'See all projects',
         'aboutme.languages': 'Languages',
         'aboutme.education': 'Education',
         'aboutme.soft-skills': 'Soft Skills',
@@ -57,5 +58,6 @@ export const ui = {
         'aboutme.soft-skills.self-motivation': 'Self motivation',
         'aboutme.soft-skills.teamwork': 'Teamwork',
         'aboutme.soft-skills.problem-solving': 'Problem solving',
+        'projects.title': 'Projects',
     },
 } as const

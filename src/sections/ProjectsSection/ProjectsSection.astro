@@ -10,7 +10,6 @@ import CutLinkXCardProject from '../../components/projects/CutLinkXCardProject/C
 import MasterEventPlannerCardProject from '../../components/projects/MasterEventPlannerCardProject/MasterEventPlannerCardProject.astro'
 
 import { getLangFromUrl, useTranslations } from '../../i18n/utils'
-import { getRelativeLocaleUrl } from 'astro:i18n'
 
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
@@ -27,11 +26,8 @@ const t = useTranslations(lang)
         <div class="show-more-projects">
             <div class="show-more-projects__circle"></div>
             <div class="show-more-projects__background"></div>
-            <a
-                class="show-more-projects__link"
-                href={getRelativeLocaleUrl(lang, 'projects')}
-            >
-                <span>{t('projects-section.viewAllProjects')}</span>
+            <a class="show-more-projects__link" href={`/${lang}/projects`}>
+                <span>{t('projects-section.see-all-projects')}</span>
                 <Icon
                     class="show-more-projects__link__icon"
                     name="hugeicons:arrow-right-01"
