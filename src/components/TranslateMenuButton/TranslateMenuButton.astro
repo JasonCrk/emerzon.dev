@@ -5,6 +5,8 @@ import { getLangFromUrl, useTranslations } from '../../i18n/utils'
 
 import './styles.css'
 
+const currentPathname = Astro.url.pathname.substring(4)
+
 const lang = getLangFromUrl(Astro.url)
 const t = useTranslations(lang)
 ---
@@ -24,20 +26,26 @@ const t = useTranslations(lang)
     </label>
 
     <menu class="translate__menu-languages">
-        <a href="/es" class="language">🇵🇪 {t('translation.spanish')}</a>
-        <a href="/en" class="language">🇺🇸 {t('translation.english')}</a>
+        <a href={`/es/${currentPathname}`} class="language"
+            >🇵🇪 {t('translation.spanish')}</a
+        >
+        <a href={`/en/${currentPathname}`} class="language"
+            >🇺🇸 {t('translation.english')}</a
+        >
     </menu>
 </div>
 
 <script is:inline lang="ts">
     document.addEventListener('DOMContentLoaded', () => {
-        const $languageLinks = document.querySelectorAll(
-            '.translate__menu-languages a',
-        )
+        const currentPathname = window.location.pathname.substring(4)
         const language = document.querySelector('html')?.getAttribute('lang')
 
+        const $languageLinks = document.querySelectorAll(
+            '.translate__menu-languages a.language',
+        )
+
         const $selectedLanguage = document.querySelector(
-            `.translate__menu-languages a[href="/${language}"]`,
+            `.translate__menu-languages a[href="/${language}/${currentPathname}"]`,
         )
 
         $languageLinks.forEach(link => link.classList.remove('active'))
