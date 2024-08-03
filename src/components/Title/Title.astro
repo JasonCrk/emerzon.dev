@@ -1,7 +1,35 @@
 ---
-import './styles.css'
+interface Props {
+    marginBottom?: string
+}
+
+const { marginBottom } = Astro.props
 ---
 
 <h2 class="title">
     <slot />
 </h2>
+
+<style is:global define:vars={{ marginBottom }}>
+    .title {
+        font-size: 1.4rem;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        text-decoration-thickness: 3px;
+        margin: 0;
+        margin-bottom: var(--marginBottom, 20px);
+        transition: text-decoration-color var(--theme-time-transition);
+    }
+
+    :is(html.light) {
+        .title {
+            text-decoration-color: var(--col-gray-700);
+        }
+    }
+
+    :is(html.dark) {
+        .title {
+            text-decoration-color: var(--col-dark-200);
+        }
+    }
+</style>
