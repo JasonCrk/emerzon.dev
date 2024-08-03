@@ -1,5 +1,5 @@
 #aboutme {
-    padding-top: 40px;
+    padding-block: 60px;
 
     article {
         display: grid;
@@ -19,6 +19,7 @@
 .aboutme__presentation__content {
     flex-grow: 1;
     width: 350px;
+    margin: 0;
 }
 
 .aboutme__presentation__photo-section {
