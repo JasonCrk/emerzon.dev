@@ -8,21 +8,21 @@ const t = useTranslations(lang)
 ---
 
 <nav class="navbar">
-    <a href={`/${lang}/#home`}>{t('nav.home')}</a>
-    <a href={`/${lang}/#recent-projects`}>{t('nav.recent-projects')}</a>
-    <a href={`/${lang}/#aboutme`}>{t('nav.aboutMe')}</a>
-    <a href={`/${lang}/#contact`}>{t('nav.contact')}</a>
+    <a href={`#home`}>{t('nav.home')}</a>
+    <a href={`#recent-projects`}>{t('nav.recent-projects')}</a>
+    <a href={`#aboutme`}>{t('nav.aboutMe')}</a>
+    <a href={`#contact`}>{t('nav.contact')}</a>
 </nav>
 
 <script is:inline type="module" lang="ts">
     document.addEventListener('DOMContentLoaded', () => {
         const $navbarLinks = document.querySelectorAll('.navbar a')
-        const $sections = document.querySelectorAll('section')
+        const $sections = document.querySelectorAll('section, footer')
 
         const observeSectionsCallback = (entries, _) => {
             entries.forEach(entry => {
                 const $link = document.querySelector(
-                    `.navbar a[href*="/#${entry.target.id}"]`,
+                    `.navbar a[href="#${entry.target.id}"]`,
                 )
 
                 if (entry.isIntersecting) {
