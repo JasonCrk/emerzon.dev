@@ -50,6 +50,10 @@ footer {
             color: var(--col-dark-main);
         }
     }
+
+    .copyright {
+        color: var(--col-dark-200);
+    }
 }
 
 :is(html.dark) {
