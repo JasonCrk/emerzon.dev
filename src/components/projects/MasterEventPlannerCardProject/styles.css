@@ -7,6 +7,7 @@
     align-items: center;
     position: relative;
     overflow: hidden;
+    position: relative;
     transition: background-color var(--theme-time-transition), color var(--theme-time-transition), transform var(--theme-time-transition);
     backdrop-filter: 30px;
     transform: rotate3d(0);
