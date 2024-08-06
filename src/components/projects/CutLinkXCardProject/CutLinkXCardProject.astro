@@ -4,6 +4,8 @@ import './styles.css'
 import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
 
+import { getLangFromUrl } from '../../../i18n/utils'
+
 import typeScriptIcon from '../../../assets/images/TypeScript.png'
 import reactIcon from '../../../assets/images/React.png'
 import tailwindCssIcon from '../../../assets/images/TailwindCSS.png'
@@ -11,9 +13,11 @@ import nextJsIcon from '../../../assets/images/NextJS.png'
 import nodeJsIcon from '../../../assets/images/NodeJS.png'
 import mySqlIcon from '../../../assets/images/MySQL.png'
 import dockerIcon from '../../../assets/images/Docker.png'
+
+const lang = getLangFromUrl(Astro.url)
 ---
 
-<a class="card-project--cut-link" href="/projects/cut-link">
+<a class="card-project--cut-link" href={`/${lang}/projects/cutlink-x`}>
     <div class="card-project--cut-link__grow"></div>
 
     <div
@@ -25,40 +29,31 @@ import dockerIcon from '../../../assets/images/Docker.png'
     >
     </div>
 
-    <span
-        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--1"
+    <span class="card-project--cut-link__link-decoration"
         >https://cutlinkx.com/jasoncrk-github</span
     >
-    <span
-        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--2"
+    <span class="card-project--cut-link__link-decoration"
         >https://cutlinkx.com/jasoncr</span
     >
-    <span
-        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--3"
+    <span class="card-project--cut-link__link-decoration"
         >https://cutlinkx.com/jasoncr</span
     >
-    <span
-        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--4"
+    <span class="card-project--cut-link__link-decoration"
         >https://cutlinkx.com/jasoncr</span
     >
-    <span
-        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--5"
+    <span class="card-project--cut-link__link-decoration"
         >https://cutlinkx.com/jasoncr</span
     >
-    <span
-        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--6"
+    <span class="card-project--cut-link__link-decoration"
         >https://cutlinkx.com/jasoncr</span
     >
-    <span
-        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--7"
+    <span class="card-project--cut-link__link-decoration"
         >https://cutlinkx.com/jasoncr</span
     >
-    <span
-        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--8"
+    <span class="card-project--cut-link__link-decoration"
         >https://cutlinkx.com/jasoncr</span
     >
-    <span
-        class="card-project--cut-link__link-decoration card-project--cut-link__link-decoration--9"
+    <span class="card-project--cut-link__link-decoration"
         >https://cutlinkx.com/jasoncr</span
     >
 
