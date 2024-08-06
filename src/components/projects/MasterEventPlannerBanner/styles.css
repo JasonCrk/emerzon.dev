@@ -1,0 +1,104 @@
+.project-banner--master-event-planner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color var(--theme-time-transition);
+
+    &>h1 {
+        margin: 0;
+    }
+}
+
+.project-banner--master-event-planner__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-banner--master-event-planner__content__name {
+    font-size: 4rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.project-banner--master-event-planner__content__decoration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    .decoration__stack {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: auto;
+            height: 38px;
+            z-index: 10;
+        }
+    }
+
+    .decoration__dots {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        div {
+            width: 24px;
+            height: 24px;
+            border-radius: 100%;
+            transition: background-color var(--theme-time-transition);
+        }
+    }
+}
+
+.project-banner--master-event-planner__decoration {
+    position: absolute;
+}
+
+.project-banner--master-event-planner__decoration--calendar {
+    font-size: 13rem;
+    bottom: 60px;
+    left: calc(50% - 570px);
+    transform: rotate(-18deg);
+}
+
+.project-banner--master-event-planner__decoration--notifications {
+    font-size: 12rem;
+    top: 20px;
+    right: calc(50% - 570px);
+    transform: rotate(20deg);
+}
+
+:is(html.light) {
+    .project-banner::before {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.01), transparent);
+    }
+
+    .project-banner--master-event-planner {
+        color: var(--col-dark-main);
+        background-color: rgba(0, 0, 0, 0.06);
+    }
+
+    .decoration__dots>div {
+        background-color: var(--col-dark-main);
+    }
+}
+
+:is(html.dark) {
+    .project-banner::before {
+        background: linear-gradient(to bottom, rgba(240, 240, 240, 0.01), transparent);
+    }
+
+    .project-banner--master-event-planner {
+        background-color: rgba(240, 240, 240, 0.1);
+
+    }
+
+    .decoration__dots>div {
+        background-color: white;
+    }
+}

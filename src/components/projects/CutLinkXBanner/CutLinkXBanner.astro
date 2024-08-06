@@ -1,0 +1,120 @@
+---
+import './styles.css'
+
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+
+import typeScriptIcon from '../../../assets/images/TypeScript.png'
+import reactIcon from '../../../assets/images/React.png'
+import tailwindCssIcon from '../../../assets/images/TailwindCSS.png'
+import nextJsIcon from '../../../assets/images/NextJS.png'
+import nodeJsIcon from '../../../assets/images/NodeJS.png'
+import mySqlIcon from '../../../assets/images/MySQL.png'
+import dockerIcon from '../../../assets/images/Docker.png'
+---
+
+<section class="project-banner project-banner--cut-link">
+    <div
+        class="project-banner--cut-link__circular-decoration project-banner--cut-link__circular-decoration--first"
+    >
+    </div>
+    <div
+        class="project-banner--cut-link__circular-decoration project-banner--cut-link__circular-decoration--second"
+    >
+    </div>
+
+    <span class="project-banner--cut-link__link-decoration"
+        >https://cutlinkx.com/jasoncrk-github</span
+    >
+    <span class="project-banner--cut-link__link-decoration"
+        >https://cutlinkx.com/jasonc2</span
+    >
+    <span class="project-banner--cut-link__link-decoration"
+        >https://cutlinkx.com/jasonc3</span
+    >
+    <span class="project-banner--cut-link__link-decoration"
+        >https://cutlinkx.com/jasonc4</span
+    >
+    <span class="project-banner--cut-link__link-decoration"
+        >https://cutlinkx.com/jasonc5</span
+    >
+    <span class="project-banner--cut-link__link-decoration"
+        >https://cutlinkx.com/jasonc6</span
+    >
+    <span class="project-banner--cut-link__link-decoration"
+        >https://cutlinkx.com/jasonc7</span
+    >
+    <span class="project-banner--cut-link__link-decoration"
+        >https://cutlinkx.com/jasonc8</span
+    >
+    <span class="project-banner--cut-link__link-decoration"
+        >https://cutlinkx.com/jasonc9</span
+    >
+
+    <div class="project-banner--cut-link__content">
+        <p class="project-banner--cut-link__content__name">
+            <span>CutLink</span>
+            <Icon
+                class="project-banner--cut-link__content__name__icon"
+                name="mdi:scissors"
+            />
+        </p>
+        <div class="project-banner--cut-link__content__stack">
+            <Image
+                class="project-banner--cut-link__content__stack__tech"
+                src={typeScriptIcon}
+                alt="TypeSCript"
+                loading="eager"
+                title="TypeScript"
+            />
+            <Image
+                class="project-banner--cut-link__content__stack__tech"
+                src={reactIcon}
+                alt="React"
+                loading="eager"
+                title="React"
+                quality="low"
+            />
+            <Image
+                class="project-banner--cut-link__content__stack__tech"
+                src={nextJsIcon}
+                alt="NextJS"
+                loading="eager"
+                title="NextJS"
+                quality="low"
+            />
+            <Image
+                class="project-banner--cut-link__content__stack__tech"
+                src={tailwindCssIcon}
+                alt="TailwindCSS"
+                loading="eager"
+                title="TailwindCSS"
+                quality="low"
+            />
+            <Image
+                class="project-banner--cut-link__content__stack__tech"
+                src={nodeJsIcon}
+                alt="NodeJS"
+                loading="eager"
+                title="Node JS"
+                quality="low"
+            />
+            <Image
+                class="project-banner--cut-link__content__stack__tech"
+                src={mySqlIcon}
+                alt="MySQL"
+                loading="eager"
+                title="MySQL"
+                quality="low"
+            />
+            <Image
+                class="project-banner--cut-link__content__stack__tech"
+                src={dockerIcon}
+                alt="Docker"
+                loading="eager"
+                title="Docker"
+                quality="low"
+            />
+        </div>
+    </div>
+</section>

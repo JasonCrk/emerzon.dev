@@ -1,0 +1,159 @@
+---
+import './styles.css'
+
+import { Icon } from 'astro-icon/components'
+import { Image } from 'astro:assets'
+
+import youTubeCloneIcon from '../../../assets/images/youtube-icon.png'
+import dockerIcon from '../../../assets/images/Docker.png'
+import reactIcon from '../../../assets/images/React.png'
+import typeScriptIcon from '../../../assets/images/TypeScript.png'
+import pythonIcon from '../../../assets/images/Python.png'
+import postgreSqlIcon from '../../../assets/images/PostgreSQL.png'
+import djangoIcon from '../../../assets/images/Django.png'
+import materialUiIcon from '../../../assets/images/MaterialUI.png'
+import tanStackIcon from '../../../assets/images/TanStack.png'
+import cloudinaryIcon from '../../../assets/images/Cloudinary.png'
+---
+
+<section class="project-banner project-banner--youtube-clone">
+    <Icon
+        class="project-banner--youtube-clone__decoration project-banner--youtube-clone__decoration--play"
+        name="mdi:play"
+    />
+    <Icon
+        class="project-banner--youtube-clone__decoration project-banner--youtube-clone__decoration--subscription"
+        name="mdi:youtube-subscription"
+    />
+    <Icon
+        class="project-banner--youtube-clone__decoration project-banner--youtube-clone__decoration--like"
+        name="mdi:like"
+    />
+    <Icon
+        class="project-banner--youtube-clone__decoration project-banner--youtube-clone__decoration--history"
+        name="mdi:history"
+    />
+    <Icon
+        class="project-banner--youtube-clone__decoration project-banner--youtube-clone__decoration--playlist-play"
+        name="mdi:playlist-play"
+    />
+    <Icon
+        class="project-banner--youtube-clone__decoration project-banner--youtube-clone__decoration--account"
+        name="mdi:account-circle"
+    />
+    <Icon
+        class="project-banner--youtube-clone__decoration project-banner--youtube-clone__decoration--watch-later"
+        name="mdi:watch-later"
+    />
+    <Icon
+        class="project-banner--youtube-clone__decoration project-banner--youtube-clone__decoration--notifications-active"
+        name="mdi:notifications-active"
+    />
+    <Icon
+        class="project-banner--youtube-clone__decoration project-banner--youtube-clone__decoration--search"
+        name="mdi:search"
+    />
+    <Icon
+        class="project-banner--youtube-clone__decoration project-banner--youtube-clone__decoration--library-video"
+        name="mdi:library-video"
+    />
+    <Icon
+        class="project-banner--youtube-clone__decoration project-banner--youtube-clone__decoration--video-plus"
+        name="mdi:video-plus"
+    />
+    <Icon
+        class="project-banner--youtube-clone__decoration project-banner--youtube-clone__decoration--comment"
+        name="mdi:comment-text-outline"
+    />
+
+    <div class="project-banner--youtube-clone__content">
+        <div class="project-banner--youtube-clone__content__stack">
+            <Image
+                class="project-banner--youtube-clone__content__stack__tech"
+                src={typeScriptIcon}
+                alt="TypeScript"
+                loading="eager"
+                quality="low"
+                title="TypeScript"
+            />
+            <Image
+                class="project-banner--youtube-clone__content__stack__tech"
+                src={reactIcon}
+                alt="React"
+                loading="eager"
+                quality="low"
+                title="React"
+            />
+            <Image
+                class="project-banner--youtube-clone__content__stack__tech"
+                src={materialUiIcon}
+                alt="Material UI"
+                loading="eager"
+                quality="low"
+                title="Material UI"
+            />
+            <Image
+                class="project-banner--youtube-clone__content__stack__tech"
+                src={tanStackIcon}
+                alt="TanStack"
+                loading="eager"
+                quality="low"
+                title="TanStack"
+            />
+            <Image
+                class="project-banner--youtube-clone__content__stack__tech"
+                src={pythonIcon}
+                alt="Python"
+                loading="eager"
+                quality="low"
+                title="Python"
+            />
+            <Image
+                class="project-banner--youtube-clone__content__stack__tech"
+                src={djangoIcon}
+                alt="Django"
+                loading="eager"
+                quality="low"
+                title="Django"
+            />
+            <Image
+                class="project-banner--youtube-clone__content__stack__tech"
+                src={postgreSqlIcon}
+                alt="PostgreSQL"
+                loading="eager"
+                quality="low"
+                title="PostgreSQL"
+            />
+            <Image
+                class="project-banner--youtube-clone__content__stack__tech"
+                src={dockerIcon}
+                alt="Docker"
+                loading="eager"
+                quality="low"
+                title="Docker"
+            />
+            <Image
+                class="project-banner--youtube-clone__content__stack__tech"
+                src={cloudinaryIcon}
+                alt="Cloudinary"
+                loading="eager"
+                quality="low"
+                title="Cloudinary"
+            />
+        </div>
+
+        <span class="project-banner--youtube-clone__content__name"
+            >YouTube Clone</span
+        >
+
+        <Image
+            class="project-banner--youtube-clone__content__icon"
+            src={youTubeCloneIcon}
+            alt="YouTube Clone Icon"
+            quality="low"
+            loading="eager"
+        />
+    </div>
+
+    <div class="project-banner--youtube-clone__circular-decoration"></div>
+</section>

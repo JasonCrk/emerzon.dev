@@ -1,0 +1,106 @@
+---
+import './styles.css'
+
+import { Image } from 'astro:assets'
+import { Icon } from 'astro-icon/components'
+
+import angularIcon from '../../../assets/images/Angular.png'
+import tailwindCssIcon from '../../../assets/images/TailwindCSS.png'
+import typeScriptIcon from '../../../assets/images/TypeScript.png'
+import javaIcon from '../../../assets/images/Java.png'
+import springBootIcon from '../../../assets/images/Spring-Boot.png'
+import mariaDbIcon from '../../../assets/images/MariaDB.png'
+import dockerIcon from '../../../assets/images/Docker.png'
+import firebaseIcon from '../../../assets/images/Firebase.png'
+---
+
+<section class="project-banner project-banner--master-event-planner">
+    <Icon
+        class="project-banner--master-event-planner__decoration project-banner--master-event-planner__decoration--notifications"
+        name="mdi:notifications-active"
+    />
+    <Icon
+        class="project-banner--master-event-planner__decoration project-banner--master-event-planner__decoration--calendar"
+        name="mdi:calendar-multiselect-outline"
+    />
+
+    <div class="project-banner--master-event-planner__content">
+        <div class="project-banner--master-event-planner__content__decoration">
+            <div class="decoration__dots">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="decoration__stack">
+                <Image
+                    src={typeScriptIcon}
+                    alt="Typescript"
+                    loading="eager"
+                    title="TypeScript"
+                />
+                <Image
+                    src={angularIcon}
+                    alt="Angular"
+                    loading="eager"
+                    title="Angular"
+                    quality="low"
+                />
+                <Image
+                    src={tailwindCssIcon}
+                    alt="TailwindCSS"
+                    loading="eager"
+                    title="TailwindCSS"
+                    quality="low"
+                />
+            </div>
+        </div>
+
+        <p class="project-banner--master-event-planner__content__name">
+            Master Event Planner
+        </p>
+
+        <div class="project-banner--master-event-planner__content__decoration">
+            <div class="decoration__stack">
+                <Image src={javaIcon} alt="Java" loading="eager" title="Java" />
+                <Image
+                    src={springBootIcon}
+                    alt="Spring Boot"
+                    loading="eager"
+                    title="Spring Boot"
+                    quality="low"
+                />
+                <Image
+                    src={mariaDbIcon}
+                    alt="MariaDB"
+                    loading="eager"
+                    title="MariaDB"
+                    quality="low"
+                />
+                <Image
+                    src={dockerIcon}
+                    alt="Docker"
+                    loading="eager"
+                    title="Docker"
+                    quality="low"
+                />
+                <Image
+                    src={firebaseIcon}
+                    alt="Firebase"
+                    loading="eager"
+                    title="Firebase"
+                    quality="low"
+                />
+            </div>
+
+            <div class="decoration__dots">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+</section>

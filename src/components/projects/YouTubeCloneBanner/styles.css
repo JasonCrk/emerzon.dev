@@ -1,0 +1,165 @@
+.project-banner--youtube-clone {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color var(--theme-time-transition);
+}
+
+.project-banner::before {
+    overflow: hidden;
+}
+
+.project-banner--youtube-clone__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-banner--youtube-clone__content__stack {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.project-banner--youtube-clone__content__stack__tech {
+    height: 40px;
+    width: auto;
+    z-index: 10;
+}
+
+.project-banner--youtube-clone__content__name {
+    font-size: 5.8rem;
+    font-family: 'Roboto Condensed';
+    font-weight: bold;
+    line-height: 0.9;
+    z-index: 10;
+}
+
+.project-banner--youtube-clone__content__icon {
+    width: auto;
+    height: 55px;
+    z-index: 10;
+}
+
+.project-banner--youtube-clone__circular-decoration {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    height: 260px;
+    border-radius: 100%;
+    filter: blur(50px);
+    z-index: -10px;
+    transition: background var(--theme-time-transition);
+}
+
+.project-banner--youtube-clone__decoration {
+    position: absolute;
+    font-size: 64px;
+}
+
+.project-banner--youtube-clone__decoration--play {
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(50% - 365px);
+    font-size: 68px;
+}
+
+.project-banner--youtube-clone__decoration--subscription {
+    top: 45px;
+    left: calc(50% - 430px);
+    transform: rotate(-20deg);
+}
+
+.project-banner--youtube-clone__decoration--like {
+    bottom: 42px;
+    left: calc(50% - 450px);
+    transform: rotate(-20deg);
+}
+
+.project-banner--youtube-clone__decoration--history {
+    top: 52%;
+    transform: translateY(-50%);
+    left: calc(50% - 510px);
+}
+
+.project-banner--youtube-clone__decoration--playlist-play {
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(50% + 315px);
+}
+
+.project-banner--youtube-clone__decoration--account {
+    bottom: 40px;
+    left: calc(50% - 600px);
+    transform: rotate(20deg);
+}
+
+.project-banner--youtube-clone__decoration--watch-later {
+    top: 40px;
+    left: calc(50% - 610px);
+    font-size: 66px;
+}
+
+.project-banner--youtube-clone__decoration--notifications-active {
+    top: 45px;
+    left: calc(50% + 380px);
+    transform: rotate(20deg);
+}
+
+.project-banner--youtube-clone__decoration--search {
+    bottom: 45px;
+    left: calc(50% + 400px);
+    transform: rotate(-10deg);
+}
+
+.project-banner--youtube-clone__decoration--library-video {
+    top: 52%;
+    transform: translateY(-50%);
+    left: calc(50% + 480px);
+    font-size: 48px;
+}
+
+.project-banner--youtube-clone__decoration--video-plus {
+    bottom: 36px;
+    left: calc(50% + 560px);
+    transform: rotate(-20deg);
+}
+
+.project-banner--youtube-clone__decoration--comment {
+    top: 35px;
+    left: calc(50% + 582px);
+}
+
+:is(html.light) {
+    .project-banner::before {
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.02), transparent);
+    }
+
+    .project-banner--youtube-clone {
+        background-color: var(--col-youtube-background-main--light);
+        color: var(--col-dark-main);
+    }
+
+    .project-banner--youtube-clone__circular-decoration {
+        background: linear-gradient(to bottom, rgba(255, 0, 0, 0.6) 15%, rgba(255, 0, 0, 0.1) 40%, transparent 100%);
+    }
+}
+
+:is(html.dark) {
+    .project-banner::before {
+        background: linear-gradient(to bottom, rgba(var(--col-youtube-background-main--dark--rgb), 0.04), transparent);
+    }
+
+    .project-banner--youtube-clone {
+        background-color: var(--col-youtube-background-main--dark);
+    }
+
+    .project-banner--youtube-clone__circular-decoration {
+        background: linear-gradient(to bottom, rgba(255, 0, 0, 0.7) 15%, rgba(255, 0, 0, 0.1) 40%, transparent 100%);
+    }
+}

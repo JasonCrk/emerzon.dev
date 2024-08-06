@@ -26,11 +26,14 @@
     --col-orange-main: #ffcd1e;
     --col-orange-main--rgb: 255, 205, 30;
 
+    --col-youtube-background-main--dark--rgb: 36, 36, 36;
     --col-youtube-background-main--dark: rgba(36, 36, 36, 0.8);
     --col-youtube-background-main--light: rgba(0, 0, 0, 0.06);
 
-    --col-cut-link-background-main--dark: rgba(208, 219, 241, .1);
-    --col-cut-link-background-main--light: rgba(208, 219, 241, .2);
+    --col-cut-link-background-main--rgb: 208, 219, 241;
+    --col-cut-link-background-main--dark: rgba(var(--col-cut-link-background-main--rgb), .1);
+    --col-cut-link-background-main--rgb: 208, 219, 241;
+    --col-cut-link-background-main--light: rgba(var(--col-cut-link-background-main--rgb), .2);
 
     --theme-time-transition: 0.15s;
 

@@ -1,0 +1,98 @@
+---
+import ProjectHead from '../layouts/heads/ProjectHead.astro'
+
+import ToggleTheme from '../components/ToggleTheme/ToggleTheme.astro'
+import TranslateMenuButton from '../components/TranslateMenuButton/TranslateMenuButton.astro'
+import ContactFooter from '../sections/ContactFooter/ContactFooter.astro'
+
+import { getLangFromUrl } from '../i18n/utils'
+
+interface Props {
+    title: string
+}
+
+const { title } = Astro.props
+
+const lang = getLangFromUrl(Astro.url)
+---
+
+<html class="dark" lang={lang}>
+    <head>
+        <ProjectHead title={title} />
+    </head>
+    <body>
+        <header>
+            <TranslateMenuButton />
+            <ToggleTheme />
+        </header>
+
+        <main>
+            <slot name="project-banner-section" />
+
+            <section class="project-content">
+                <div class="project-content__center">
+                    <slot name="project-content-section" />
+
+                    <ContactFooter />
+                </div>
+            </section>
+        </main>
+
+        <style is:global>
+            @import '../styles/normalize.css';
+            @import '../styles/global.css';
+            @import '../styles/variables.css';
+
+            header {
+                position: fixed;
+                top: 25.5px;
+                left: 0px;
+                width: 100%;
+                padding-inline: 30px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                z-index: 100;
+            }
+
+            .project-banner {
+                min-height: 400px;
+                height: 44vh;
+                width: 100%;
+                z-index: -10;
+                position: relative;
+                padding-bottom: 50px;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -60px;
+                    height: 140px;
+                    width: 100%;
+                    background: white;
+                    left: 0;
+                    backdrop-filter: blur(50px);
+                    filter: blur(10px);
+                    transition: background var(--theme-time-transition);
+                }
+            }
+
+            .project-content {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                .project-content__center {
+                    width: 100%;
+                    max-width: 1000px;
+                }
+            }
+
+            @media screen and (height <= 840px) {
+                .project-content {
+                    top: 403px;
+                }
+            }
+        </style>
+    </body>
+</html>
